@@ -216,20 +216,16 @@ function App() {
   },[currentSongIndex,playlist]);
 
   const displaytypelist = (id) =>{
-    // if(id < 5){
-    //   // console.log(1);
-    //   return 'none'
-    // }
-    // else{
-    //   return 'music_big'
-    // }
-    return 'music_big'
+    if(id < 8){
+      return 'music_big'
+    }
+    else{
+      return 'music_small'
+    }
   }
   
 
   const [keyword,setKeyword] = useState('');
-
-  // const filteredList = (keyword) => 
 
     useEffect (() => {
       if(keyword.length > 0 ){ 
@@ -238,7 +234,6 @@ function App() {
       else{
         setMusic(musicList)
       }
-    // console.log(music);
   },[keyword,musicList]);
 
 
