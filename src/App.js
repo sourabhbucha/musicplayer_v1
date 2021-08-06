@@ -14,7 +14,7 @@ function App() {
       id : "2",
       title : "Bulleya",
       artist : "Pritam",
-      img_source : "./images/bulleya.jpg",
+      img_source : "./images/Bulleya.jpg",
       src : "./music/bulleya.mp3",
       playlist: false 
     },
