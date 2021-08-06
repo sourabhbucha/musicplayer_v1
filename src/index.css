@@ -1,6 +1,5 @@
 body {
   background-color: #f8f8f8;
-  /* margin: none; */
 }
 
 .header {
@@ -66,8 +65,6 @@ body {
 @media only screen and (max-width: 550px) {
   .list {
     margin-top: 10vh;
-    /* margin-left: 4vw; */
-    /* margin-right: 2vw; */
     width: 90vw;
     display: grid;
     grid-gap: 1vw;
@@ -79,8 +76,6 @@ body {
 @media only screen and (min-width: 350px) {
   .list {
     margin-top: 10vh;
-    /* margin-left: 2vw; */
-    /* margin-right: 2vw; */
     width: 90vw;
     display: grid;
     grid-gap: 1vw;
@@ -93,8 +88,6 @@ body {
 @media only screen and (min-width: 900px) {
   .list {
     margin-top: 10vh;
-    /* margin-left: 3vw; */
-    /* margin-right: 2vw; */
     width: 65vw;
     display: grid;
     grid-gap: 1vw;

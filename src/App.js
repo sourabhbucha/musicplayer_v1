@@ -279,9 +279,9 @@ return (
 
       <div className="upNext">
         {playlist.map((music,idx) => (
-            <div className="upNextSongs" key={idx} onClick = {() => setCurrentSongIndex(idx)}>
-              <img src={music.img_source} alt="" />
-              <div className="list_details">
+            <div className="upNextSongs" key={idx}>
+              <img src={music.img_source} alt="" onClick = {() => setCurrentSongIndex(idx)} />
+              <div className="list_details" onClick = {() => setCurrentSongIndex(idx)}>
               <h3>{music.title}</h3>
               <h4>{music.artist}</h4>
               </div>
