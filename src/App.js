@@ -183,7 +183,11 @@ function App() {
     setPlaylist([...playlist, song]);
   }
   }
-  const removeFromPlaylist = (song) =>{
+  const removeFromPlaylist = (song,id) =>{
+      if(id === playlist.length - 1){
+        setCurrentSongIndex(0);
+      }
+    
     if(playlist.length > 1){
       setPlaylist(playlist.filter((product) => product !==song))
       song.playlist = false;
@@ -201,6 +205,7 @@ function App() {
   useEffect (() => {
     // console.log(playlist);
   },[playlist,currentSongIndex]);
+
 
 
   useEffect(() => {
@@ -268,7 +273,7 @@ return (
         <button type="submit" className="close" onClick={() => {
           document.getElementById("play").style.display = "none";
           document.body.style.overflowY = "scroll";
-          }}><i class="fa fa-times"></i></button>  
+          }}><i className="fa fa-times"></i></button>  
           <Player 
             currentSongIndex = {currentSongIndex}
             setCurrentSongIndex = {setCurrentSongIndex}
@@ -285,7 +290,7 @@ return (
               <h3>{music.title}</h3>
               <h4>{music.artist}</h4>
               </div>
-              <button onClick = {() => removeFromPlaylist(music)}>
+              <button onClick = {() => removeFromPlaylist(music,idx)}>
               {btn(music.playlist)}
               </button>
             </div>
