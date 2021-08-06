@@ -213,7 +213,7 @@ function App() {
         return currentSongIndex + 1;
       }
     });
-  },[currentSongIndex]);
+  },[currentSongIndex,playlist]);
 
   const displaytypelist = (id) =>{
     // if(id < 5){
@@ -239,7 +239,7 @@ function App() {
         setMusic(musicList)
       }
     // console.log(music);
-  },[keyword]);
+  },[keyword,musicList]);
 
 
 return (
@@ -248,6 +248,7 @@ return (
       <div className="header">
         <input type="text" placeholder="Search..." name="search" className="search" value = {keyword} onChange={(e) => setKeyword(e.target.value)}/>
         <button type="submit" className="search_btn"><i className="fa fa-search"></i></button>
+        <img className="playing_btn" src={playlist[currentSongIndex].img_source} alt=""/>
       </div>
 
       <div className="list">
@@ -257,38 +258,39 @@ return (
           <h3>{music.title}</h3>
           <h4>{music.artist}</h4>
           <button onClick = {() => addToPlaylist(music)}>
-          {btn(music.playlist)}
+          <h5>{btn(music.playlist)}</h5>
           </button>
           </div>
         ))}
       </div>
 
-
+    <div className="right">   
+    
       <div className="playlist">
-        <div className="playing">
           <Player 
             currentSongIndex = {currentSongIndex}
             setCurrentSongIndex = {setCurrentSongIndex}
             nextSongIndex={nextSongIndex}
             songs = {playlist}
           / >  
-        </div>
-        <div className="upNext">
-          <h3 className="upNext-lable">Up Next...</h3>
-          {playlist.map((music,idx) => (
-              <div className="upNextSongs" key={idx}>
-                <img src={music.img_source} alt="" />
-                <div className="list_details">
-                <h3>{music.title}</h3>
-                <h4>{music.artist}</h4>
-                </div>
-                <button onClick = {() => removeFromPlaylist(music)}>
-                {btn(music.playlist)}
-                </button>
-              </div>
-            ))}
-        </div>
       </div> 
+
+      <div className="upNext">
+        {playlist.map((music,idx) => (
+            <div className="upNextSongs" key={idx}>
+              <img src={music.img_source} alt="" />
+              <div className="list_details">
+              <h3>{music.title}</h3>
+              <h4>{music.artist}</h4>
+              </div>
+              <button onClick = {() => removeFromPlaylist(music)}>
+              {btn(music.playlist)}
+              </button>
+            </div>
+          ))}
+      </div>
+
+    </div>  
       
   </div>
   );

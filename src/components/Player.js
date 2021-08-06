@@ -40,20 +40,28 @@ function Player(props) {
             });
         }
     }
+    
+    const rotation = (isPlaying) => {
+        if (isPlaying)
+            return 'details-img rotate';
+        else
+            return 'details-img';
+    }
+
     return (
         <div>
             <audio 
                 src={props.songs[props.currentSongIndex].src} 
                 ref={audioEl}
-                onTimeUpdate = {(e) => setPercentage((e.currentTarget.currentTime / e.currentTarget.duration) * 100)}>
+                onTimeUpdate = {(e) => setPercentage((e.currentTarget.currentTime / e.currentTarget.duration) * 100 )}>
             </audio>
 
             <div className="right">
-                <img className="details-img" src={props.songs[props.currentSongIndex].img_source} alt=""/>
+                <img className={rotation(isPlaying)} src={props.songs[props.currentSongIndex].img_source} alt=""/>
                 <PlayerDetails 
                     song = {props.songs[props.currentSongIndex]} 
                 />
-                <input type = "range" className = "slider" step="0.01" value = {percentage}  
+                <input type = "range" className = "slider" id="#appearance1" step="0.01" value = {percentage}  
                 onChange={(e) => {
                     const audio = audioEl.current
                     audio.currentTime = (audio.duration / 100) * e.target.value;
