@@ -174,7 +174,7 @@ function App() {
 
   const [music,setMusic] = useState(musicList) 
   const [playlist,setPlaylist] = useState([music[0]]);
-    const [currentSongIndex,setCurrentSongIndex] = useState(0);
+  const [currentSongIndex,setCurrentSongIndex] = useState(0);
   const [nextSongIndex,setNextSongIndex] = useState(currentSongIndex + 1);
 
   const addToPlaylist = (song) =>{
@@ -184,10 +184,9 @@ function App() {
   }
   }
   const removeFromPlaylist = (song) =>{
-    if(playlist.length > 0){
+    if(playlist.length > 1){
       setPlaylist(playlist.filter((product) => product !==song))
       song.playlist = false;
-      console.log(music);
     }
   }
 
@@ -243,10 +242,14 @@ return (
       <div className="header">
         <input type="text" placeholder="Search..." name="search" className="search" value = {keyword} onChange={(e) => setKeyword(e.target.value)}/>
         <button type="submit" className="search_btn"><i className="fa fa-search"></i></button>
-        <img className="playing_btn" src={playlist[currentSongIndex].img_source} alt=""/>
+        <img className="playing_btn" src={playlist[currentSongIndex].img_source} alt="" 
+          onClick={() => {
+            document.getElementById("play").style.display = "block";
+            document.body.style.overflow = "hidden";
+          }}/>
       </div>
 
-      <div className="list">
+      <div className="list" id="lst">
         {music.map((music,idx) => (
           <div className={displaytypelist(idx)} key={idx}>
           <img src={music.img_source} alt="" />
@@ -259,20 +262,24 @@ return (
         ))}
       </div>
 
-    <div className="right">   
+    <div className="right" id= "play">   
     
       <div className="playlist">
+        <button type="submit" className="close" onClick={() => {
+          document.getElementById("play").style.display = "none";
+          document.body.style.overflowY = "scroll";
+          }}><i class="fa fa-times"></i></button>  
           <Player 
             currentSongIndex = {currentSongIndex}
             setCurrentSongIndex = {setCurrentSongIndex}
             nextSongIndex={nextSongIndex}
             songs = {playlist}
-          / >  
+          / > 
       </div> 
 
       <div className="upNext">
         {playlist.map((music,idx) => (
-            <div className="upNextSongs" key={idx}>
+            <div className="upNextSongs" key={idx} onClick = {() => setCurrentSongIndex(idx)}>
               <img src={music.img_source} alt="" />
               <div className="list_details">
               <h3>{music.title}</h3>
@@ -283,6 +290,7 @@ return (
               </button>
             </div>
           ))}
+
       </div>
 
     </div>  
