@@ -175,7 +175,6 @@ body {
   top: 7vh;
   grid-template-rows: min(7vw, 15vh) 7vh 2vh 1vh 65vh;
   justify-content: center;
-  display: none;
 }
 @media only screen and (max-width: 550px) {
   .right {
