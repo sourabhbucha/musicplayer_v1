@@ -3,7 +3,6 @@ import Player from "./components/Player";
 import {Data} from "./components/Data"
 function App() {
   const [musicList] = useState(Data)
-
   const [music,setMusic] = useState(musicList) 
   const [playlist,setPlaylist] = useState([music[0]]);
   const [currentSongIndex,setCurrentSongIndex] = useState(0);
