@@ -1,4 +1,5 @@
 import React , {useState, useEffect} from "react";
+import { createGlobalStyle } from 'styled-components';
 import Player from "./components/Player";
 import {Data} from "./components/Data"
 function App() {
@@ -71,11 +72,42 @@ function App() {
       }
   },[keyword,musicList]);
 
+  const DarkMode = createGlobalStyle`
+  :root {
+  --clip-bg: #2d313a;
+  --text: #274894;
+  --subtext: #8f9092;
+  --bg: #1e1f21;
+  --btn: #2166c7;
+  --btn_hover: #1b4177;
+  --search: #2d313a;
+  --search-text: #98a0b7;
+  --control-btn: white;
+  --subControl-btn: #8f9092;
+  }
+`;
+  const LightMode = createGlobalStyle`
+  :root {
+  --clip-bg: white;
+  --text: #3B4C74;
+  --subtext: #8f9092;
+  --bg: #f8f8f8;
+  --btn: #1377FF;
+  --btn_hover: #1b4177;
+  --search: #cfcfcf;
+  --search-text: black;
+  --control-btn: black;
+  --subControl-btn: #2e2e2e;
+  }
+`;
+
+
 
 return (
   <div className="App">
-
+    <DarkMode />
       <div className="header">
+        <button type="submit" className="logo"><img src= {process.env.PUBLIC_URL + "/logo-dark.png"} alt=""/></button>
         <input type="text" placeholder="Search..." name="search" className="search" value = {keyword} onChange={(e) => setKeyword(e.target.value)}/>
         <button type="submit" className="search_btn"><i className="fa fa-search"></i></button>
         <img className="playing_btn" src={playlist[currentSongIndex].img_source} alt="" 
