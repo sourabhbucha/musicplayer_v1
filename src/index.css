@@ -1,5 +1,29 @@
+:root {
+  --clip-bg-dark: #2d313a;
+  --text-dark: #274894;
+  --subtext-dark: #8f9092;
+  --bg-dark: #1e1f21;
+  --btn-dark: #2166c7;
+  --btn_hover-dark: #1b4177;
+  --search-dark: #2d313a;
+  --search-text-dark: #98a0b7;
+  --control-btn-dark: white; 
+  --subControl-btn-dark: #8f9092;
+
+  /* --clip-bg-light: white;
+  --text-light: #3B4C74;
+  --subtext-light: #8f9092;
+  --bg-light: #f8f8f8;
+  --btn-light: #1377FF;
+  --btn_hover-light: #1b4177;
+  --search-light: #cfcfcf;
+  --search-text-light: black;
+  --control-btn-light: black;
+  --subControl-btn-light: #2e2e2e; */
+}
+
 body {
-  background-color: #f8f8f8;
+  background-color: var(--bg-dark);
 }
 
 .header {
@@ -12,7 +36,7 @@ body {
   display: grid;
   grid-template-columns: 0.25fr 2fr 0.5fr max(80px, 10vw);
   overflow: hidden;
-  background-color: #f8f8f8;
+  background-color: var(--bg-dark);
   width: 100%;
 }
 
@@ -21,15 +45,16 @@ body {
   grid-column: 2/3;
   padding: 1.5vh;
   font-size: 2vh;
-  background: #c0c3c0;
+  background: var(--search-dark);
   border-radius: 1.5vh;
+  color: var(--search-text-dark);
 }
 
 .search_btn {
   grid-column: 3/4;
   float: right;
   padding: 1.5vh;
-  background: #1377ff;
+  background: var(--btn-dark);
   color: white;
   font-size: 2vh;
   border: none;
@@ -52,7 +77,7 @@ body {
 }
 
 .search_btn:hover {
-  background: #0b7dda;
+  background: var(--btn_hover-dark);
 }
 
 .none {
@@ -123,7 +148,7 @@ body {
   font-style: normal;
   font-weight: bold;
   font-size: max(7px, 1vw);
-  color: #223562;
+  color: var(--text-dark);
 }
 .music_big > h4 {
   grid-row: 3/4;
@@ -133,7 +158,7 @@ body {
   font-style: normal;
   font-weight: normal;
   font-size: max(5px, 0.75vw);
-  color: #8f9092;
+  color: var(--subtext-dark);
 }
 
 .music_big > button {
@@ -142,12 +167,12 @@ body {
   text-align: center;
   padding: max(4px, 0.5vw);
   margin: auto;
-  margin-right: 0;
+  left: auto;
   border: none;
   outline: none;
   width: max(20px, 2vw);
   height: max(20px, 2vw);
-  background: #1377ff;
+  background: var(--btn-dark);
   border-radius: 50%;
 }
 
@@ -155,14 +180,14 @@ body {
   margin: auto;
   font-family: Roboto;
   font-size: max(10px, 1vw);
-  color: #ffffff;
+  color: white;
 }
 
 .music_small {
   grid-column: span 2;
   display: grid;
   grid-template-columns: max(30px, 5vw) 2fr 1fr 1fr;
-  background: #ffffff;
+  background: var(--clip-bg-dark);
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   margin-bottom: 1.5vh;
@@ -187,7 +212,7 @@ body {
   font-style: normal;
   font-weight: bold;
   font-size: max(10px, 1vw);
-  color: #223562;
+  color: var(--text-dark);
 }
 .music_small > h4 {
   text-align: center;
@@ -197,7 +222,7 @@ body {
   font-style: normal;
   font-weight: normal;
   font-size: max(6px, 0.75vw);
-  color: #8f9092;
+  color: var(--subtext-dark);
 }
 
 .music_small > button {
@@ -210,7 +235,7 @@ body {
   outline: none;
   width: max(20px, 2vw);
   height: max(20px, 2vw);
-  background: #1377ff;
+  background: var(--btn-dark);
   border-radius: 50%;
 }
 
@@ -272,7 +297,8 @@ body {
     text-align: center;
     margin-bottom: 1px;
     margin-top: 1vh;
-    font-weight: 500;
+    font-weight: bolder;
+    color: var(--text-dark);
   }
 
   .c-player--details .details-artist {
@@ -282,6 +308,7 @@ body {
     margin-top: 0;
     margin-bottom: 1vh;
     font-weight: lighter;
+    color: var(--subtext-dark);
   }
 
   .slider {
@@ -300,6 +327,7 @@ body {
   .c-player--controls .play-btn {
     margin: 0 1vw;
     padding: 5px;
+    color: var(--control-btn-dark);
     background: none;
     border: none;
     outline: none;
@@ -311,6 +339,7 @@ body {
     border: none;
     outline: none;
     cursor: pointer;
+    color: var(--subControl-btn-dark);
     font-size: max(min(1vw, 2vh), 15px);
   }
 
@@ -339,6 +368,7 @@ body {
   }
 
   .upNextSongs {
+    background-color: var(--clip-bg-dark);
     display: flex;
     margin: 1vh auto;
     width: 90%;
@@ -362,14 +392,14 @@ body {
   .list_details > h3 {
     font-size: max(10px, 1vw);
     margin: auto;
-    color: #223562;
+    color: var(--text-dark);
   }
 
   .list_details > h4 {
     font-weight: lighter;
     font-size: max(6px, 0.75vw);
     margin: auto;
-    color: #8f9092;
+    color: var(--subtext-dark);
   }
 
   .upNextSongs > button {
@@ -383,7 +413,7 @@ body {
     outline: none;
     width: max(20px, 2vw);
     height: max(20px, 2vw);
-    background: #1377ff;
+    background: var(--btn-dark);
     border-radius: 50%;
     font-family: Roboto;
     font-size: max(10px, 1vw);
@@ -396,7 +426,8 @@ body {
     display: none;
     position: fixed;
     margin: none;
-    background-color: rgba(255, 255, 255, 0.97);
+    background-color: var(--bg-dark);
+    opacity: 0.97;
     height: 100%;
     width: 100%;
     left: 0;
@@ -412,6 +443,7 @@ body {
     border: none;
     outline: none;
     cursor: pointer;
+    color: var(--control-btn-dark);
     font-size: max(min(3vw, 4vh), 30px);
   }
   .right {
@@ -462,7 +494,8 @@ body {
     text-align: center;
     margin-bottom: 1px;
     margin-top: 1vh;
-    font-weight: 500;
+    font-weight: bolder;
+    color: var(--text-dark);
   }
 
   .c-player--details .details-artist {
@@ -472,6 +505,7 @@ body {
     margin-top: 0;
     margin-bottom: 1vh;
     font-weight: lighter;
+    color: var(--subtext-dark);
   }
 
   .slider {
@@ -496,6 +530,7 @@ body {
     outline: none;
     cursor: pointer;
     font-size: max(min(2vw, 3vh), 18px);
+    color: var(--control-btn-dark);
   }
   .c-player--controls .skip-btn {
     background: none;
@@ -503,6 +538,7 @@ body {
     outline: none;
     cursor: pointer;
     font-size: max(min(1vw, 2vh), 15px);
+    color: var(--subControl-btn-dark);
   }
 
   .upNext {
@@ -528,6 +564,7 @@ body {
   }
 
   .upNextSongs {
+    background-color: var(--clip-bg-dark);
     display: flex;
     margin: 1vh auto;
     margin-left: 5%;
@@ -552,13 +589,13 @@ body {
   .list_details > h3 {
     font-size: max(10px, 1vw);
     margin: auto;
-    color: #223562;
+    color: var(--text-dark);
   }
 
   .list_details > h4 {
     font-size: max(6px, 0.75vw);
     margin: auto;
-    color: #8f9092;
+    color: var(--subtext-dark);
   }
 
   .upNextSongs > button {
@@ -572,7 +609,7 @@ body {
     outline: none;
     width: max(20px, 2vw);
     height: max(20px, 2vw);
-    background: #1377ff;
+    background: var(--btn-dark);
     border-radius: 50%;
     font-family: Roboto;
     font-size: max(10px, 1vw);
