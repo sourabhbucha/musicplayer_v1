@@ -1,4 +1,41 @@
+/* :root {
+  
+
+  --bg: #f8f8f8;
+  --clip-bg: white;
+  --text: #3b4c74;
+  --subtext: #8f9092;
+  --btn: #1377ff;
+  --btn_hover: #1b4177;
+  --search: #cfcfcf;
+  --search-text: black;
+  --control-btn: black;
+  --subControl-btn: #2e2e2e;
+
+  
+  --bg: #1e1f21;
+  --clip-bg: #2d313a;
+  --text: #274894;
+  --subtext: #8f9092;
+  --btn: #2166c7;
+  --btn_hover: #1b4177;
+  --search: #2d313a;
+  --search-text: #98a0b7;
+  --control-btn: white;
+  --subControl-btn: #8f9092;
+} */
+
 body {
+  --clip-bg: #2d313a;
+  --text: #274894;
+  --subtext: #8f9092;
+  --bg: #1e1f21;
+  --btn: #2166c7;
+  --btn_hover: #1b4177;
+  --search: #2d313a;
+  --search-text: #98a0b7;
+  --control-btn: white;
+  --subControl-btn: #8f9092;
   background-color: var(--bg);
 }
 
