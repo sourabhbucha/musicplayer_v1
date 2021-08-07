@@ -92,7 +92,7 @@ const changeTheme = () => {
   if(Mode===1){
     document.body.style.setProperty("--bg", "#1e1f21")
     document.body.style.setProperty("--clip-bg", "#2d313a")
-    document.body.style.setProperty("--text", "#274894")
+    document.body.style.setProperty("--text", "#2166C7")
     document.body.style.setProperty("--subtext", "#8f9092")
     document.body.style.setProperty("--btn", "#2166c7")
     document.body.style.setProperty("--btn_hover", "#1b4177")
@@ -118,6 +118,10 @@ const changeTheme = () => {
 useEffect(() => {
   changeTheme();
 },[Mode])
+
+function myFunction() {
+  alert("Image is loaded");
+}
 
 return (
   <div className="App">
