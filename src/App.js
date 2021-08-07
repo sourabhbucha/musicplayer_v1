@@ -65,7 +65,7 @@ function App() {
 
     useEffect (() => {
       if(keyword.length > 0 ){ 
-        setMusic(musicList.filter((music) =>  music.title.toLowerCase().includes(keyword.toLowerCase())))
+        setMusic(musicList.filter((music) =>  music.title.toLowerCase().includes(keyword.toLowerCase()) || music.artist.toLowerCase().includes(keyword.toLowerCase()) ))
       }
       else{
         setMusic(musicList)
